@@ -8,7 +8,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: Gilroy;
+    font-family: Gilroy, sans-serif;
 }
 
 /* main */
@@ -16,7 +16,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
-    padding: 5vw;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,35 +27,33 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 2vw;
-    width: 60vw;
-    min-width: 50vw;
-    border-radius: 1.5vw;
+    padding: 20px;
+    width: 90%;
+    max-width: 540px;
+    border-radius: 10px;
 }
-
 
 .to-do-list h1 {
     display: flex;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 24px;
     color: #002765;
-    margin-bottom: 2vw;
+    margin-bottom: 20px;
 }
 
 .to-do-list h1 img {
-    width: 3vw;
-    margin-left: 2vw;
+    width: 30px;
+    margin-left: 10px;
 }
 
 /* row */
-
 .row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #000;
     background-color: #edeef0;
-    border-radius: 2vw;
+    border-radius: 30px;
+    margin-bottom: 20px;
 }
 
 .row input {
@@ -63,8 +61,8 @@ body {
     outline: none;
     background: transparent;
     flex: 1;
-    font-size: 1.4vw;
-    padding: 1vw 1.5vw;
+    font-size: 16px;
+    padding: 10px 15px;
 }
 
 .row button {
@@ -72,24 +70,22 @@ body {
     outline: none;
     background-color: #ff5945;
     color: #fff;
-    font-size: 1.5vw;
-    padding: 1vw 4vw;
-    border-radius: 2vw;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
 }
 
-
 /* list-container */
 .list-container {
-    margin-top: 2vw;
-
+    margin-top: 20px;
 }
 
 ul li {
     list-style: none;
-    font-size: 1.3vw;
-    padding: 1vw 2.5vw;
+    font-size: 16px;
+    padding: 12px 8px 12px 40px;
     user-select: none;
     position: relative;
     cursor: pointer;
@@ -101,12 +97,11 @@ ul li::before {
     background-image: url(../assets/images/unchecked.png);
     background-size: cover;
     background-position: center;
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
-    top: 1vw;
-    left: -5px;
-
+    top: 12px;
+    left: 8px;
 }
 
 .checked {
@@ -116,22 +111,87 @@ ul li::before {
 
 .checked::before {
     background-image: url(../assets/images/checked.png);
-
 }
 
 ul li span {
     position: absolute;
     right: 0;
-    top: 1vw;
-    font-size: 1.5vw;
-    cursor: pointer;
-    border-radius: 50%;
-    height: 2vw;
-    width: 2vw;
-    line-height: 2vw;
+    top: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 ul li span:hover {
     background-color: #edeef0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .to-do-list {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .to-do-list h1 {
+        font-size: 20px;
+    }
+
+    .to-do-list h1 img {
+        width: 25px;
+    }
+
+    .row input {
+        font-size: 14px;
+    }
+
+    .row button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 10px 8px 10px 35px;
+    }
+
+    ul li::before {
+        height: 18px;
+        width: 18px;
+        top: 10px;
+        left: 6px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .to-do-list {
+        width: 80%;
+        max-width: 480px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .to-do-list {
+        max-width: 600px;
+    }
+
+    .to-do-list h1 {
+        font-size: 28px;
+    }
+
+    .row input {
+        font-size: 18px;
+    }
+
+    .row button {
+        font-size: 18px;
+    }
+
+    ul li {
+        font-size: 18px;
+    }
 }
